@@ -1,6 +1,6 @@
 from aiogram.types import InlineKeyboardButton, InlineKeyboardMarkup
 
-from config import username, education_link
+from config import username, education_link, ref_link
 
 
 start_kb = InlineKeyboardMarkup(inline_keyboard=[
@@ -14,7 +14,7 @@ check_dep = InlineKeyboardMarkup(inline_keyboard=[
 ])
 
 reg_kb = InlineKeyboardMarkup(inline_keyboard=[
-    [InlineKeyboardButton(text='Регистрация 🌐', url='https://tdf.er')],
+    [InlineKeyboardButton(text='Регистрация 🌐', url=ref_link)],
 ])
 
 get_signal = InlineKeyboardMarkup(inline_keyboard=[
