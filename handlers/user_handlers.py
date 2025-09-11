@@ -93,7 +93,7 @@ async def get_message_signal(message: Message, gambling_service: GamblingService
         return
     
     photo = FSInputFile('images/forecast.jpg')
-    await message.answer_photo(photo, caption=f'<b>Сигнал - {k}X\nРекомендумый процент на ставку - {rec_percent}%</b>\n<blockquote>Заходить в сделку надо, если до игры осталось не менее 5 секунд, иначе риск повышается</blockquote>',
+    await message.answer_photo(photo, caption=f'<b>Сигнал - {k}X\nРекомендумый процент на ставку - {rec_percent}%</b>\n<blockquote>Заходить в сделку надо, если до игры осталось не менее 3 секунд, иначе риск повышается</blockquote>',
                                         reply_markup=user_kbs.get_signal)
 
 
@@ -115,7 +115,7 @@ async def get_callback_signal(callback: CallbackQuery, gambling_service: Gamblin
     if user.next_k:
         await user_service.reset_next_k(callback.from_user.id)
     
-    await callback.message.answer_photo(photo, caption=f'<b>Сигнал - {k}X\nРекомендумый процент на ставку - {rec_percent}%</b>\n<blockquote>Заходить в сделку надо, если до игры осталось не менее 5 секунд, иначе риск повышается</blockquote>',
+    await callback.message.answer_photo(photo, caption=f'<b>Сигнал - {k}X\nРекомендумый процент на ставку - {rec_percent}%</b>\n<blockquote>Заходить в сделку надо, если до игры осталось не менее 3 секунд, иначе риск повышается</blockquote>',
                                         reply_markup=user_kbs.get_signal)
 
 
